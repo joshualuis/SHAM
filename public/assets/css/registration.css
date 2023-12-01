@@ -1,0 +1,190 @@
+:root {
+    --primary-color: rgb(255, 255, 255);
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    
+    place-items: center;
+    min-height: 100vh;
+    background: linear-gradient(0deg, rgba(19, 146, 86, 0.76) 0%, rgba(251, 255, 62, 0.917312) 50.28%, #FB6434 100%);
+  }
+  /* Global Stylings */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+  
+  .width-50 {
+    width: 50%;
+  }
+  
+  .ml-auto {
+    margin-left: auto;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding:1rem 2rem;
+    position: relative;
+    top:0; left: 0;
+    z-index: 100;
+  }
+  .head .logo{
+    font-size: 2.5rem;
+    color:#fff;
+  }
+  
+  .head .logo img{
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    height: 7vh;
+  }
+  
+  .head .nav_bar ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .head .nav_bar ul li{
+    margin:0 1.5rem;
+  }
+  
+  .head .nav_bar ul li a{
+    font-size: 2rem;
+    color:#fff;
+  }
+  
+  .head .nav_bar ul li a:hover{
+    color:#ccc;
+  }
+ 
+  
+ 
+ 
+
+  
+  /* Progressbar */
+  .progress_bar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 0rem 0 3rem;
+  align-items: center;
+  }
+  
+  .progress_bar::before,
+  .progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #acacac;
+    z-index: -1;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .progress {
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: 0.3s;
+    
+  }
+  
+  .progress-step {
+    width: 4.1875rem;
+    height: 4.1875rem;
+    background-color: #acacac;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  }
+  
+  .progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+    color: #000000;
+  }
+  
+  .progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 1.5rem;
+    color: #000000;
+  }
+  
+  .progress-step-active {
+    background-color: var(--primary-color);
+    color: #000000;
+  }
+  
+  /* Form */
+  .form {
+    width: clamp(320px, 30%, 430px);
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+  }
+  
+  .form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+  }
+  
+  .form-step-active {
+    display: block;
+  }
+  
+  .input-group {
+    margin: 2rem 0;
+  }
+  
+  @keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+  
+  /* Button */
+  

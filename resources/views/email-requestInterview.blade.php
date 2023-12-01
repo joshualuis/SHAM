@@ -1,0 +1,1 @@
+Hello {{ $fullname }}! <br>We are glad to inform you that your request for rescheduling of interview has been approved. Please attend on {{ $body }} in SVNHS. Thank You!

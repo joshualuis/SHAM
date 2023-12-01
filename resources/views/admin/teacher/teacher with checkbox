@@ -1,0 +1,291 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Add Teacher information</h4>
+              </div>
+            
+              <form action="/api/teachers" method="post">
+              <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label for="" class="control-label">fname</label>
+                        <input type="text" class="form-control" placeholder="fname" id="fname" name="fname" value="{{old('fname')}}">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="" class="control-label">mname</label>
+                        <input type="name" class="form-control" placeholder="mname" id="mname" name="mname" value="{{old('mname')}}">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label for="" class="control-label">lname</label>
+                        <input type="text" class="form-control" placeholder="lname" id="lname" name="lname" value="{{old('lname')}}">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="" class="control-label">contact</label>
+                        <input type="text" class="form-control" placeholder="contact" id="contact" name="contact" value="{{old('contact')}}">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label for="" class="control-label">email</label>
+                        <input type="text" class="form-control" placeholder="email" id="email" name="email" value="{{old('email')}}">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="" class="control-label">gender</label>
+                        <input type="text" class="form-control" placeholder="gender" id="gender" name="gender" value="{{old('gender')}}">
+                      </div> 
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="" class="control-label">age</label>
+                        <input type="text" class="form-control" placeholder="age" id="age" name="age" value="{{old('age')}}">
+                      </div> 
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="" class="control-label">civilstatus</label>
+                        <input type="text" class="form-control" placeholder="civilstatus" id="civilstatus" name="civilstatus" value="{{old('civilstatus')}}">
+                      </div> 
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="" class="control-label">birthdate</label>
+                        <input type="date" class="form-control" placeholder="birthdate" id="birthdate" name="birthdate" value="{{old('birthdate')}}">
+                      </div> 
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="" class="control-label">address</label>
+                        <input type="text" class="form-control" placeholder="address" id="address" name="address" value="{{old('address')}}">
+                      </div> 
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="" class="control-label">certificate</label>
+                        <input type="text" class="form-control" placeholder="certificate" id="certificate" name="certificate" value="{{old('certificate')}}">
+                      </div> 
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="" class="control-label">major</label>
+                        <input type="text" class="form-control" placeholder="major" id="major" name="major" value="{{old('major')}}">
+                      </div> 
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="" class="control-label">specialization</label>
+                        <input type="text" class="form-control" placeholder="specialization" id="specialization" name="specialization" value="{{old('specialization')}}">
+                      </div> 
+                    </div>
+
+                    <div class="col-md-6 pr-1">
+                      
+                      <label for="subject" class="control-label">Subjects (check all applicable)</label>
+                      <div class="form-control">
+                      @foreach ($subjects as $id => $subject)
+                      <div class="">
+                        {!! Form::checkbox('subject_id[]', $id, null, array('class' => 'form-check-input', '_id'=>'name')) !!}
+                        {!! Form::label('name', $subject, array('class' => 'form-check-label')) !!}
+                      </div>
+                      @endforeach
+                    </div>
+                    </div>
+
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                      <button type="submit" class="btn btn-primary">Save</button>
+                
+                      <a href="{{url()->previous()}}" class="btn btn-default" role="button">Cancel</a>
+                    </div>     
+                    </div>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Edit Teacher information</h4>
+              </div>
+              <div class="card-body">
+                {{ Form::model($teacher,['method'=>'PATCH','route' => ['teachers.update', $teacher->_id, 'files' => true]]) }}
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label for="fname" class="control-label">fname</label>
+    					           {{ Form::text('fname',null,array('class'=>'form-control','id'=>'fname')) }}
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="mname" class="control-label">mname</label>
+                         {{ Form::text('mname',null,array('class'=>'form-control','id'=>'mname')) }}
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label for="lname" class="control-label">lname</label>
+    					           {{ Form::text('lname',null,array('class'=>'form-control','id'=>'lname')) }}
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="contact" class="control-label">contact</label>
+   						           {{ Form::text('contact',null,array('class'=>'form-control','id'=>'contact')) }}
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="email" class="control-label">email</label>
+   						           {{ Form::text('email',null,array('class'=>'form-control','id'=>'email')) }}
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="gender" class="control-label">gender</label>
+   						           {{ Form::text('gender',null,array('class'=>'form-control','id'=>'gender')) }}
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="age" class="control-label">age</label>
+   						           {{ Form::text('age',null,array('class'=>'form-control','id'=>'age')) }}
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="civilstatus" class="control-label">civilstatus</label>
+   						           {{ Form::text('civilstatus',null,array('class'=>'form-control','id'=>'civilstatus')) }}
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="birthdate" class="control-label">birthdate </label>
+   						           {{ Form::date('birthdate',null,array('class'=>'form-control','id'=>'birthdate')) }}
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="address" class="control-label">address</label>
+   						           {{ Form::text('address',null,array('class'=>'form-control','id'=>'address')) }}
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="certificate" class="control-label">certificate</label>
+   						           {{ Form::text('certificate',null,array('class'=>'form-control','id'=>'certificate')) }}
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="major" class="control-label">major</label>
+   						           {{ Form::text('major',null,array('class'=>'form-control','id'=>'major')) }}
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label for="specialization" class="control-label">specialization</label>
+   						           {{ Form::text('specialization',null,array('class'=>'form-control','id'=>'specialization')) }}
+                      </div>
+                    </div>
+
+                    
+                    
+                    <div class="col-md-6 pr-1">
+                      
+                      <label for="curriculum" class="control-label">Subjects (check all applicable)</label>
+                      <div class="form-control">
+                      @foreach ($curriculums as $curriculum_id => $curriculum)
+                      <div class="">
+                        @if (in_array($curriculum_id, $teacher_curriculum))
+                        {!! Form::checkbox('curriculum_id[]', $curriculum_id, true, array('class' => 'form-check-input', 'id'=>'curriculum')) !!}
+                        {!! Form::label('curriculum', $curriculum, array('class' => 'form-check-label')) !!}
+
+                        @else
+                        {!! Form::checkbox('curriculum_id[]', $curriculum_id, null, array('class' => 'form-check-input', 'id'=>'curriculum')) !!}
+                        {!! Form::label('curriculum', $curriculum, array('class' => 'form-check-label')) !!}
+                        @endif
+                      </div>
+
+                      @endforeach
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                      	<button type="submit" class="btn btn-primary">Save</button>
+  						          <a href="{{url()->previous()}}" class="btn btn-default" role="button">Cancel</a>
+                    </div>     
+                    </div>
+
+              </div>
+              {!! Form::close() !!}   
+            </div>
+          </div>
+        </div>
+      </div>
+          
+      </body>
+</html>

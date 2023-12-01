@@ -1,0 +1,1 @@
+Good day {{$fullname}}! <br>{{$body}}

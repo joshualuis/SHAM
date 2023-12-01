@@ -1,0 +1,1 @@
+Hello {{ $fullname }}! <br>We are glad to inform you that your interview has been rescheduled on {{ $body }} in SVNHS. Thank You!
