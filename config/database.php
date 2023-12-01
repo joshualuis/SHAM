@@ -95,7 +95,7 @@ return [
 
             'mongodb' => [
                   'driver' => 'mongodb',
-                  'dsn' => env('DB_URI', 'mongodb+srv://sham:FEATPbAqu3ff3WQR@cluster0.lypkqr2.mongodb.net/?retryWrites=true&w=majority'),
+                  'dsn' => env('DB_URI', 'mongoDB URL'),
                   'database' => 'svnhs',
           ],
 
